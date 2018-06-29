@@ -4,10 +4,32 @@
   <head>
     <link rel = "stylesheet" type = "text/css" href = "style.css">
     <script src="brazil_javascript.js"> </script>
+
+    <script>
+      // Load the IFrame Player API code asynchronously.
+      var tag = document.createElement('script');
+      tag.src = "https://www.youtube.com/player_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      // Replace the 'ytplayer' element with an <iframe> and
+      // YouTube player after the API code downloads.
+      var player;
+      function onYouTubePlayerAPIReady() {
+        player = new YT.Player('ytplayer', {
+          height: '360',
+          width: '640',
+          videoId: 'RGJVUoKRiY4'
+          // Vbu5q0l5pDo
+        });
+      }
+    </script>
+
   </head>
 
   <body>
     <!-- link to get back to main brazil page -->
+
     <a href="index.html"><h3>Back</h3></a>
 
     <center>
@@ -19,12 +41,17 @@
       <strong onclick = "costaRicaGame()" id = "bold_underline"> June 22, 2018 Brazil v Costa Rica Line Up:</strong>
       <br> <i id = "socialMedias"> Click on images for their social medias! </i>
 
+<p> Watch this cool video on the lineup of the game!
+<br> <div id="ytplayer"></div>
+
+
       <p><h3 id = "boldNames">A. Becker-#1: Goalkeeper</h3>
         <br> <img onclick = "beckergram()" id = "players" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/20180610_FIFA_Friendly_Match_Austria_vs._Brazil_850_1625.jpg/200px-20180610_FIFA_Friendly_Match_Austria_vs._Brazil_850_1625.jpg">
         <ul>
           <li>Current Team: Roma</li>
           <li>25 Years Old</li>
         </ul>
+
 
       <p><h3 id = "boldNames">T. Silva-#2: Defender</h3>
         <br> <img onclick = "silvagram()" id = "players" src ="https://www.gazetaesportiva.com/wp-content/uploads/imagem/2018/06/21/28034356137_ee6208d6d9_o.jpg">
